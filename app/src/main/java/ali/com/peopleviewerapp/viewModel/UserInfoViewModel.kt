@@ -10,7 +10,7 @@ import ali.com.peopleviewerapp.repository.UserInfoRepository
 
 class UserInfoViewModel : ViewModel() {
     // TODO: Implement the ViewModel
-    var movies: MutableLiveData<UserInfo>? = null
+    var listOfUsers: MutableLiveData<UserInfo>? = null
         private set
     private val repository: UserInfoRepository
 
@@ -19,11 +19,11 @@ class UserInfoViewModel : ViewModel() {
     }
 
     fun init() {
-        if (this.movies != null) {
+        if (this.listOfUsers != null) {
             // ViewModel is created per Fragment so
             // we know the userId won't change
             return
         }
-        movies = repository.movies
+        listOfUsers = repository.users
     }
 }

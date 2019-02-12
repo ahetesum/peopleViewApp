@@ -42,7 +42,7 @@ class UserListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         mViewModel = ViewModelProviders.of(this).get(UserInfoViewModel::class.java)
         mViewModel!!.init()
-        mViewModel!!.movies!!.observe(this, Observer { movieModels ->
+        mViewModel!!.listOfUsers!!.observe(this, Observer { movieModels ->
             movieList.addAll(movieModels!!.data)
             mAdapter!!.notifyDataSetChanged()
         })

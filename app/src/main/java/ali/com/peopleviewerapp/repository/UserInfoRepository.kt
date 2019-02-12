@@ -14,7 +14,7 @@ class UserInfoRepository {
 
     private var apiInterface: APIInterface? = null
 
-    val movies: MutableLiveData<UserInfo>
+    val users: MutableLiveData<UserInfo>
         get() {
             val refferAndInvitePojoMutableLiveData = MutableLiveData<UserInfo>()
             apiInterface = ApiClient.clientAuthentication!!.create(APIInterface::class.java)
